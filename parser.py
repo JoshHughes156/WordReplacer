@@ -15,5 +15,16 @@ def parseword(word, file): # Parse a single word
         sp = lines[i].split(": ")
         if sp[0] == word:
             return sp[1]
+    return word # If the word isn't found in the file just return the word
 
-print(parseword("b", "dict.txt"))
+def parsetext(text, file):
+    newtext = ""
+    for word in text:
+        newtext += parseword(word, file)
+    return newtext
+
+
+t = "a b a b b"
+print(t)
+print("--->")
+print(parsetext(t, "dict.txt"))
